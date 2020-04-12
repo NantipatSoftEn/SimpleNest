@@ -1,4 +1,12 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+    "tabWidth": 4, // look easy inden
+    "singleQuote": false, // string should be double quote
+    "semi": true, // should have  semicolon
+    "quoteProps": "as-needed", //  add when requied
+    "jsxSingleQuote": false, // default
+    "trailingComma": "es5", // should be include for version contron
+    "bracketSpacing": true, // easy to look
+    "arrowParens": "avoid", // i need x =>x
+    "htmlWhitespaceSensitivity": "css", // respect css
+    "endOfLine": "lf"
 }
