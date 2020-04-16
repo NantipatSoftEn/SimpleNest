@@ -24,11 +24,11 @@ export class CatsService {
                 const transactionHost = { transaction: t };
 
                 await this.catsModel.create(
-                    { firstName: "yello", Age: "22" },
+                    { firstName: "yello", Age: "22", teamId:"1" },
                     transactionHost
                 );
                 await this.catsModel.create(
-                    { firstName: "blue", Age: "8" },
+                    { firstName: "blue", Age: "8",teamId:"2" },
                     transactionHost
                 );
             });

@@ -1,10 +1,11 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { CatsController } from "./cats/cats.controller";
 import { SequelizeModule } from "@nestjs/sequelize";
 import { Cats } from "./cats/cats.model";
+import { Teams } from "./teams/teams.model";
 import { CatsModule } from "./cats/cats.module";
+import { TeamsModule } from './teams/teams.module';
 @Module({
     imports: [
         SequelizeModule.forRoot({
@@ -14,11 +15,12 @@ import { CatsModule } from "./cats/cats.module";
             username: "root",
             password: "",
             database: "test",
-            models: [Cats],
+            models: [Teams],
             autoLoadModels: true,
             synchronize: true
         }),
-        CatsModule
-    ]
+        TeamsModule
+    ],
+
 })
 export class AppModule {}
