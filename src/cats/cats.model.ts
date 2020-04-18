@@ -3,9 +3,8 @@ import {
     Model,
     Table,
     ForeignKey,
-    BelongsTo
-} from "sequelize-typescript";
-import { Teams } from "../teams/teams.model";
+    BelongsTo,
+} from 'sequelize-typescript';
 @Table
 export class Cats extends Model<Cats> {
     @Column
@@ -16,11 +15,4 @@ export class Cats extends Model<Cats> {
 
     @Column({ defaultValue: true })
     isActive: boolean;
-
-    @ForeignKey(() => Teams)
-    @Column
-    teamId: number;
-
-    @BelongsTo(() => Teams)
-    team: Teams;
 }

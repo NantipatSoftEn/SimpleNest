@@ -5,8 +5,8 @@ import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
 
 @Module({
-  imports: [SequelizeModule.forFeature([Cats])],
-  providers: [CatsService],
-  controllers: [CatsController],
+    imports: [SequelizeModule.forFeature([Cats])],
+    providers: [CatsService],
+    controllers: [CatsController],
 })
 export class CatsModule {}

@@ -1,26 +1,22 @@
-import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { SequelizeModule } from "@nestjs/sequelize";
-import { Cats } from "./cats/cats.model";
-import { Teams } from "./teams/teams.model";
-import { CatsModule } from "./cats/cats.module";
-import { TeamsModule } from './teams/teams.module';
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { Cats } from './cats/cats.model';
+import { CatsModule } from './cats/cats.module';
 @Module({
     imports: [
         SequelizeModule.forRoot({
-            dialect: "mysql",
-            host: "localhost",
+            dialect: 'mysql',
+            host: 'localhost',
             port: 3306,
-            username: "root",
-            password: "",
-            database: "test",
-            models: [Teams],
+            username: 'root',
+            password: '',
+            database: 'test',
             autoLoadModels: true,
-            synchronize: true
+            synchronize: true,
         }),
-        TeamsModule
+        CatsModule,
     ],
-
 })
 export class AppModule {}
