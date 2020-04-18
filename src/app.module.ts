@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Cats } from './cats/cats.model';
 import { CatsModule } from './cats/cats.module';
+import { UsersModule } from './users/users.module';
 @Module({
     imports: [
         SequelizeModule.forRoot({
@@ -17,6 +18,7 @@ import { CatsModule } from './cats/cats.module';
             synchronize: true,
         }),
         CatsModule,
+        UsersModule
     ],
 })
 export class AppModule {}
