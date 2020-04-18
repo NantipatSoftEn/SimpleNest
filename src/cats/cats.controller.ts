@@ -1,9 +1,9 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
 
-import { Cats } from './cats.model';
-import { CatsService } from './cats.service';
-import { CreateCatDto } from './dto/create-cat.dto'; // data transfer object
-@Controller('cats')
+import { Cats } from "./cats.model";
+import { CatsService } from "./cats.service";
+import { CreateCatDto } from "./dto/create-cat.dto"; // data transfer object
+@Controller("cats")
 export class CatsController {
     constructor(private readonly catsService: CatsService) {}
 
@@ -17,13 +17,13 @@ export class CatsController {
         return this.catsService.findAll();
     }
 
-    @Get(':id')
-    findOne(@Param('id') id: string): Promise<Cats> {
+    @Get(":id")
+    findOne(@Param("id") id: string): Promise<Cats> {
         return this.catsService.findOne(id);
     }
 
-    @Delete(':id')
-    remove(@Param('id') id: string): Promise<void> {
+    @Delete(":id")
+    remove(@Param("id") id: string): Promise<void> {
         return this.catsService.remove(id);
     }
 }

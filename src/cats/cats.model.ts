@@ -4,7 +4,7 @@ import {
     Table,
     ForeignKey,
     BelongsTo,
-} from 'sequelize-typescript';
+} from "sequelize-typescript";
 @Table
 export class Cats extends Model<Cats> {
     @Column

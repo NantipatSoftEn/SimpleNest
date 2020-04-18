@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
-import { Sequelize } from 'sequelize-typescript';
-import { Cats } from './cats.model';
-import { CreateCatDto } from './dto/create-cat.dto';
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/sequelize";
+import { Sequelize } from "sequelize-typescript";
+import { Cats } from "./cats.model";
+import { CreateCatDto } from "./dto/create-cat.dto";
 @Injectable()
 export class CatsService {
     constructor(
@@ -24,11 +24,11 @@ export class CatsService {
                 const transactionHost = { transaction: t };
 
                 await this.catsModel.create(
-                    { firstName: 'yello', Age: '22', teamId: '1' },
+                    { firstName: "yello", Age: "22", teamId: "1" },
                     transactionHost
                 );
                 await this.catsModel.create(
-                    { firstName: 'blue', Age: '8', teamId: '2' },
+                    { firstName: "blue", Age: "8", teamId: "2" },
                     transactionHost
                 );
             });
