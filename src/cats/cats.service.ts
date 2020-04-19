@@ -19,23 +19,6 @@ export class CatsService {
         return cat.save();
     }
     async findAll(): Promise<Cats[]> {
-        try {
-            await this.sequelize.transaction(async (t) => {
-                const transactionHost = { transaction: t };
-
-                await this.catsModel.create(
-                    { firstName: "yello", Age: "22", teamId: "1" },
-                    transactionHost
-                );
-                await this.catsModel.create(
-                    { firstName: "blue", Age: "8", teamId: "2" },
-                    transactionHost
-                );
-            });
-        } catch (err) {
-            // Transaction has been rolled back
-            // err is whatever rejected the promise chain returned to the transaction callback
-        }
         return this.catsModel.findAll();
     }
 

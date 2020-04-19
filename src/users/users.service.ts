@@ -21,23 +21,6 @@ export class UsersService {
     }
 
     async findAll(): Promise<User[]> {
-        try {
-            await this.sequelize.transaction(async (t) => {
-                const transactionHost = { transaction: t };
-
-                await this.userModel.create(
-                    { firstName: "Abraham", lastName: "Lincoln", catsId: "1" },
-                    transactionHost
-                );
-                await this.userModel.create(
-                    { firstName: "John", lastName: "Boothe", catsId: "2" },
-                    transactionHost
-                );
-            });
-        } catch (err) {
-            // Transaction has been rolled back
-            // err is whatever rejected the promise chain returned to the transaction callback
-        }
         return this.userModel.findAll();
     }
 
