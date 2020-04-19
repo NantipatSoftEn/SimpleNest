@@ -4,7 +4,9 @@ import {
     Table,
     ForeignKey,
     BelongsTo,
+    HasMany,
 } from "sequelize-typescript";
+import {User} from '../users/user.model'
 @Table
 export class Cats extends Model<Cats> {
     @Column
@@ -15,4 +17,6 @@ export class Cats extends Model<Cats> {
 
     @Column({ defaultValue: true })
     isActive: boolean;
+    @HasMany(() => User)
+    User: User[];
 }

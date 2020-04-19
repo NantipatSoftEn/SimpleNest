@@ -26,11 +26,11 @@ export class UsersService {
                 const transactionHost = { transaction: t };
 
                 await this.userModel.create(
-                    { firstName: "Abraham", lastName: "Lincoln" },
+                    { firstName: "Abraham", lastName: "Lincoln", catsId: "1" },
                     transactionHost
                 );
                 await this.userModel.create(
-                    { firstName: "John", lastName: "Boothe" },
+                    { firstName: "John", lastName: "Boothe", catsId: "2" },
                     transactionHost
                 );
             });
