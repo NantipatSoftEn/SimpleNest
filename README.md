@@ -17,6 +17,5 @@ npx sequelize-cli db:seed:all
 
 ## Ref
 
-![sequelize migration ](https://sequelize.org/master/manual/migrations.html )
-
-![sequelize typescript ](https://github.com/RobinBuschmann/sequelize-typescript )
+[sequelize migration ](https://sequelize.org/master/manual/migrations.html )
+[sequelize typescript ](https://github.com/RobinBuschmann/sequelize-typescript )
